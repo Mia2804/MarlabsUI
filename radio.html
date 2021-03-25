@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=DRINK, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getValues() {
+            document.getElementById("result").innerHTML = "";
+            var r = document.getElementsByTagName('input');
+            for (let i = 0; i < r.length; i++) {
+                if(r[i].checked)
+                document.getElementById("result").innerHTML = (r[i].value).toUpperCase();
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    1. how to select single answer> - creating groups by giving name, so we can select only one<br>
+    2. keyeord check <br>
+    3. how to build a submit button and get the value? - define a JS function called getValue in head section and give each one a value<br>
+    4. how to use checkbox<br>
+    5. row span/column span<br>
+    6. border<br>
+    <hr>
+    DRINKS:<br>
+    
+    <input type="radio" name="gr1" checked value="coke">Coke</ipnut><br>
+    <input type="radio" name="gr1" checked value="sprit">Sprite</input><br>
+    <hr>
+    <input type="button" onclick="getValues()" value="CLICK">
+    <br>
+    <label id= "result"></label>
+</body>
+</html>

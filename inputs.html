@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        label span::after{
+            padding: 15px;
+        }
+        /* set a invalid input reminder -> just copy a emoji is fine*/
+        label input:invalid+span::after{
+                content: "❌";
+        }
+        label input:valid+span::after{
+                content: "\2713";
+        }
+    </style>
+</head>
+<body>
+    1. textbox, we need to define a Label<br>
+    2. what is the use of the"for" attribute?<br>
+    --highlighted!!<br>
+    3. required(only work if you put in form!!!)<br>
+    --if we leave the input box for blank, error<br>
+    4. placeholder<br>
+    --showing you what to type<br>
+    5. readonly<br>
+    --give it a value attribute<br>
+    6. checking a proper email<br>
+    7. checking form->regular expressionm.info<br>
+    -- put in pattern attribute<br>
+    8. checking max/min characters->eg:{2,2}after the dot!!<br>
+    Also, [0-9]{3}-[0-9]{3}-[0-9]{4} define a phone format<br>
+    -> what if either 9 or 11<br>
+    9. time box<br>
+    10.add CSS<br>
+    11.password<br>
+    --zxcvbn<br>
+    <hr>
+    <form>
+        <label for="first">FIRST NAME</label>
+        <input id = "first" type="text" value="SAM" required readonly placeholder="ALL IN CAPS">
+        <br>
+        <label for="email">EMAIL</label>
+        <input id="email" value="a@a.aa" type="email" required pattern="\b[A_Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,2}\b" placeholder="email">
+        <br>
+        <label for="phone">PHONE</label>
+        <input id="phone" type="tel" required value="123-456-7890"
+        pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        placeholder="111-111-1111"
+        >
+        <br>
+        <input type="time" min="9:00" max="18:00" required>
+        <small>office hours are from 9am to 6pm</small>
+        <br>
+        <label>Choose ur preferred date(required, April 12th to 20th):
+            <input type="date"
+            min="2021-04-12"
+            max="2021-04-20"
+            />
+            <span></span>
+        </label>
+        <hr>
+        <input type="submit"></button>
+    </form>
+    
+
+</body>
+</html>

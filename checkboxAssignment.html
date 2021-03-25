@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+    <script>
+        function b1_OncheckChanged(checkbox){
+            if(checkbox.checked){
+                document.getElementById("t1").setAttribute("readonly","true");
+            }
+            else{
+                document.getElementById("t1").removeAttribute("readonly");
+            }
+        }
+
+        function getValues() {
+            document.getElementById("result").innerHTML = "";
+            var r = document.getElementsByTagName('input');
+            for (let i = 0; i < r.length; i++) {
+                if(r[i].checked)
+                document.getElementById("result").innerHTML += (r[i].value+' ').toUpperCase();
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Checkbox Assignment(Yifan Li)</h1>
+        
+        1. Use a checkbox to control the readonly property of a textbox. If checkbox is check make the textbox readonly and
+        If the check is unchecked make the textbox editable.<br>
+        <br>
+        <input type="checkbox" onclick="b1_OncheckChanged(this)" id = "b1" value=" ">
+        <input type="text" id="t1" placeholder="type here">
+        <hr>
+        
+        2. Create 2 groups of checkboxes and display all the values of the checkboxes checked by the user. Same scenario as we did
+        with radio input types in the class.<br>
+        <br>
+        Drinks:<br>
+        <input type="checkbox" name="gr1[]" id = "b2" value="coke" placeholder="checkbox group1">Coke🥤</input><br>
+        <input type="checkbox" name="gr1[]" id = "b3" value="coffee" placeholder="checkbox group1">Coffee☕</input><br>
+        <br>
+        Fruits:<br>
+        <input type="checkbox" name="gr2[]" id = "b4" value="kiwi" placeholder="checkbox group2">kiwi🥝</input><br>
+        <input type="checkbox" name="gr2[]" id = "b5" value="banana" placeholder="checkbox group2">banana🍌</input><br>
+        <hr>
+        <input type="button" onclick="getValues()" value="CLICK">
+        <br>
+        <label id= "result"></label>
+
+    </div>
+    
+</body>
+</html>
