@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        form{
+            background-color: aliceblue;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- 1. attribute multiple allows multiple files
+    2. after set concole.log, once selected files, open console->target->files: Filelist
+    <hr> -->
+    <form>
+        <h1>File assignment(Yifan)</h1>
+        <strong>Choose multiple files and the details of file will be shown</strong>
+        <br>
+        <hr>
+        <br>
+        <center><input type="file" multiple id="files" ></center>
+        
+        <br>
+        <output id='list'></output>
+        <br>
+        <script>
+            function handleFileSelected(evt){
+                console.log(evt);
+                var files = evt.target.files;
+                var output = [];
+                for (let i = 0; i < files.length; i++) {
+                    f = files[i];
+                    output.push('<li><strong>', f.name, '</strong>(', f.type || 'n//a', ')-','<Strong>', Math.round(f.size/1024), '</strong> KB, last modified:',
+                        f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n//a', '</li>');
+                }
+                document.getElementById('list').innerHTML = '<ul>'+output.join(' ')+'</ul>';
+    
+            }
+            document.getElementById("files").addEventListener('change', handleFileSelected, false)
+        </script>
+    </form>
+    
+</body>
+</html>

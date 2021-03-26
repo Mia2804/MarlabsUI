@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    1. define style in body tag;<br>
+    2. the id of datalist should be same as list value we defined former
+    3. Chrome eats a lot of memory;<br>
+    4. what else can we use as value??<br>
+    <br>
+    
+    <hr>
+    <label for="myBrowser">Choose a browser</label>
+    <input list="browsers" id="myBrowser" name="myBrowser">
+    <datalist id = "browsers">
+        <option value="Chrome"></option>
+        <option value="IE"></option>
+        <option value="FireFox"></option>
+        <option value="Brave"></option>
+    </datalist>
+    <script>
+        list = document.getElementById("myBrowser")
+        list.addEventListener('change', () =>{
+            alert(list.value)
+        })
+    </script>
+</body>
+</html>

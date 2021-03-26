@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Tips:: -> Browser->Application->local storage<br>
+    write a key-value pair in local storage, how to make next time user log in, remember username?<br>
+    <hr>
+    <div>
+        User Name:<input type="text" id = "username" onclick="loadUser()"><br>
+        Password:<input type="password" id="password"><br>
+        <input type="button" value="Login" onclick="saveUser()" />
+        <input type="button" value="Reset" onclick="removeUser()"/>
+    </div>
+
+    <script>
+        function loadUser(){
+            username = document.
+        }
+        function saveUser(){
+            username = document.getElementById("username");
+            localStorage.username=username.value;
+        }
+
+        function removeUser() {
+            localStorage.removeItem('username')
+        }
+    </script>
+</body>
+</html>
