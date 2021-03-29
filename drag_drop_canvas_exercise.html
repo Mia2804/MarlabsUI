@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <title>Drag/drop and canvas exercise</title>
+    <style>
+        #upload {
+            border: 2px dashed #ccc;
+            border-radius: 20px;
+            width: 500px;
+            height: 100px;
+            font-family: sans-serif;
+            margin: 100px auto;
+            padding: 20px;
+            }
+
+        #upload.highlight {
+            border-color: purple;
+            }
+        
+        #thumbnail img {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+
+        canvas {
+            border: 2px solid red;
+        }
+    </style>
+
+    <script> 
+        function allowDrop(ev){
+            // Default is to open it in a new tab
+            ev.preventDefault();
+        }
+
+        function drop(ev){
+            ev.preventDefault();
+            var data = ev.dataTransfer;
+            var files = data.files;
+            showThumbnail(files);
+        }
+
+        function showThumbnail(files) {
+                for (var i = 0; i < files.length; i++) {
+                    var file = files[i]
+                    var imageType = /image.*/
+                    if (!file.type.match(imageType)) {
+                        console.log("Not an Image");
+                        continue;
+                    }
+
+                    var image = document.createElement("img");
+                    // image.classList.add("")
+                    var thumbnail = document.getElementById("thumbnail");
+                    image.file = file;
+                    thumbnail.appendChild(image)
+
+                    var reader = new FileReader()
+                    reader.onload = (function (aImg) {
+                        return function (e) {
+                            aImg.src = e.target.result;
+                        };
+                    }(image))
+                    var ret = reader.readAsDataURL(file);
+                    var canvas = document.createElement("canvas");
+                    ctx = canvas.getContext("2d");
+                    image.onload = function () {
+                        ctx.drawImage(image, 10, 10)
+                    }
+                }
+            }
+    </script>
+</head>
+<body>
+    <input type="file" id = "upload_image" style="display: none;" multiple="multiple">
+    <div id="upload" class="drop_area" ondrop="drop(event)" ondragover="allowDrop(event)">
+        
+            Click here to choose or drag to here!<br>
+            
+            
+        
+    </div>
+
+    <div id="thumbnail"></div>
+
+    <script>
+        var fileInput = document.getElementById("upload_image");
+        var fileDiv = document.getElementById("upload")
+
+        fileInput.addEventListener("change", function(e) {
+            var files = this.files
+            showThumbnail(files)
+        },false)
+
+        fileDiv.addEventListener("click", function (e) {
+                $(fileInput).show().focus().click().hide();
+                e.preventDefault();
+            }, false)
+    </script>
+    
+</body>
+</html>

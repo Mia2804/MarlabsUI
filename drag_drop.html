@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            height:300px;
+            width: 200px;
+        }
+    </style>
+    <script>
+        function allowDrop(ev){
+            // Default is to open it in a new tab
+            ev.preventDefault();
+        }
+        function drag(ev){
+        
+            var data = ev.dataTransfer.setData("Text", ev.target.id)
+        }
+        function drop(ev){
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data))
+        }
+    </script>
+</head>
+<body>
+    make a draggable image and drag into the border then drop it.
+    <hr>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img ondragstart="drag(event)" draggable="true" style="width: 200px; height:300px;" src="images/7.jpg" id="drag1"/>
+    </div>
+</body>
+</html>

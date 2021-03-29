@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    1. how to put a img into canvas?<br>
+    --need a reference to canvas<br>
+    2. how to define a image in JS?<br>
+    -- 
+        var image = new Image();<br>
+        image.src = 'images/7.jpg'<br>
+        image.alt = 'The missing Image'<br>
+        document.body.appendChild(image)<br>
+    3.ctx draw image function <br>
+    --> open img in paint to see the hiright and width of this img<br>
+    <hr>
+    <canvas
+    id="canvas"
+    style="border:1px solid red;"
+    height="500px"
+    width="500px">
+
+    </canvas>
+    <img src="images/7.jpg" alt="">
+    <script>
+    // var image = new Image();
+    // image.src = 'images/7.jpg'
+    // image.alt = 'The missing Image'
+    // document.body.appendChild(image)
+    var canvas= document.getElementById("canvas");
+    var ctx = canvas.getContext('2d');
+    var img = new Image();
+    img.src = 'images/7.jpg'
+    img.alt = 'The missing image'
+
+    img.onload = () => {
+        ctx.drawImage(img,0,0,500,735,0,0,500,500)
+    }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    1. how to use span<br>
+    2. highlite a spam?<br>
+    --style=background-color<br>
+    3. how to use background image?<br>
+    --
+    <hr>
+    <span style="background-color: aquamarine;">your text here</span>
+    <br>
+    <span style="background-image: url(https://picsum.photos/id/237/200/300);">Background image</span>
+    <hr>
+    Choose a color for the text below<input type="color" id="color_picker" onchange="showHex()">
+    <span id="color_hex_value"></span>
+    <h1>Color Me!!!</h1>
+    <script>
+        function showHex() {
+            var hex = document.querySelector("#color_hex_value"), h1 = document.querySelector("h1")
+            h1.style.color = document.querySelector("#color_picker").value;
+        }
+    </script>
+</body>
+</html>
