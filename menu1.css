@@ -1,4 +1,4 @@
-.navigation{
+#navigation{
     /* make it linear */
     display: flex;
     
@@ -7,27 +7,41 @@
     font-family: Arial, Helvetica, sans-serif;
 
     /* make the list icon gone */
-    list-style: none;
+    list-style: none inside;
 
     margin: 0;
     background-color: aquamarine;
 }
 
-.navigation a{
+#navigation a{
     text-decoration: none;
     display: block;
     padding: 1em;
-    color: white;
+    color:teal;
     cursor: pointer;
 }
 
-.navigation a:hover{
-    background:tomato;
+#navigation li:hover ul{
+    display: block;
 }
-
 /* how to space across all screen when the page is small? */
 @media all and (max-width:800px) {
     .navigation{
         justify-content: space-around;
     }
 }
+#navigation li:hover{
+    background:thistle;
+}
+#navigation li li a {
+    font-size: 80%;
+    
+  }
+
+#navigation ul{
+    display: none;
+    position: absolute;
+    padding:0;
+    text-decoration: none;
+    list-style: none;
+  }
