@@ -1,0 +1,33 @@
+.navigation{
+    /* make it linear */
+    display: flex;
+    
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* make the list icon gone */
+    list-style: none;
+
+    margin: 0;
+    background-color: aquamarine;
+}
+
+.navigation a{
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: white;
+    cursor: pointer;
+}
+
+.navigation a:hover{
+    background:tomato;
+}
+
+/* how to space across all screen when the page is small? */
+@media all and (max-width:800px) {
+    .navigation{
+        justify-content: space-around;
+    }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    1.fieldset-><br>
+    <div>As the example above shows, the /fieldset/ element provides a grouping for a part of an HTML form, with a nested /legend/ element providing a caption for the /fieldset/.
+         It takes few attributes, the most notable of which are form, which can contain the id of a /form/ on the same page, allowing you to make the /fieldset/ part of that /form/
+          even if it is not nested inside it, and disabled, which allows you to disable the /fieldset/ and all its contents in one go.</div>
+    2. what is the default font in html?<br>
+    -->depend on different browser<br>
+    <img src="images/default_font.png" width="500"><br>
+    3. legend -><br>
+    4. label-><br>
+    5. range-><br>
+    6. ouput-><br>
+-->is a container element into which a site or app can inject the results of a calculation or the outcome of a user action.<br>
+--> for attribute: A space-separated list of other elements’ ids, indicating that those elements contributed input values to (or otherwise affected) the calculation.<br>
+    7. span-><br>
+-->A /span/ element which is used to color a part of a text:<br>
+    8. oninput-><br>
+-->Execute a JavaScript when a user writes something in an /input/ field<br>
+    9. interview from ebay!! <br>
+
+    <hr>
+    <form oninput="amount.value=(principal.valueAsNumber * rate.valueAsNumber)/100">
+        <fieldset>
+            <legend style="font-weight: bold;">Interest Calculator</legend>
+                <label for="principal">Amount to Invest:$</label>
+                <input type="number" id="principal" min="0" value="1000">
+                <p><label for="rate">Interest Rate:</label></p>
+                <input id="rate" type="range" min="0" max="20"
+                oninput="thisRate.value = rate.value">
+                <output name="thisRate" for="rate">0</output><span>%</span>
+                <p>
+                    Interest Recived:<strong>$<output name="amount">0</output></strong>
+                </p>
+        </fieldset>
+    </form>
+    <hr>
+    10. use range to control width and height of the image?<br>
+    11. how to use filters?<br>
+    12. how to create a menu?<br>
+    <img src="/images/7.jpg">
+</body>
+</html>
