@@ -25,6 +25,9 @@
     display: block;
 }
 /* how to space across all screen when the page is small? */
+/* @media screen does not effect print as pdf */
+/* @media print work for print */
+/* @media does not have anything, default is all. apply to all */
 @media all and (max-width:800px) {
     .navigation{
         justify-content: space-around;

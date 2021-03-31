@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    build a pop up dialog box! pop up all the context inside the dialog tag
+    <hr>
+    <dialog id="favDialog">
+        <form method="dialog">
+            <p>
+                <label>
+                    Fvaourite animal:
+                    <select>
+                        <option></option>
+                        <option>Brine Shrimp</option>
+                        <option>Red Meat</option>
+                        <option>White Meat</option>
+                    </select>
+                </label>
+            </p>
+            <menu>
+                <button id="cancelBtn" value="cancel">Cancel</button>
+                <button id="confirmBtn" value="confirm">Confirm</button>
+            </menu>
+        </form>
+    </dialog>
+    <menu>
+        <button id="updateDetails">Update Details</button>
+    </menu>
+    <output></output>
+
+    <script>
+        var updateButton = document.getElementById('updateDetails')
+        var favDialog = document.getElementById('favDialog')
+        var outputbox = document.querySelector('output')
+        var selectEl = document.querySelector('select')
+        var confirmBtn = document.getElementById('confirmBtn')
+        var cancelBtn = document.getElementById('cancelBtn')
+        
+        //trick: put the select value into confirm button!
+
+
+        //update details button opns the <dialog> manually
+    updateButton.addEventListener('click', function onOpen(){
+            if(typeof favDialog.showModal === "function") {
+            favDialog.showModal();
+        } else {
+            alert("The <dialog> API is not supported by the browser!")
+        }
+    });
+
+    // set the selected value as the value of confirm button
+    selectEl.addEventListener('change', function onSelect(e) {
+        confirmBtn.value = selectEl.value + " " + confirmBtn.value;
+        cancelBtn.value = selectEl.value + " " + cancelBtn.value;
+    });
+
+    //when click confirm, close the pop-up 
+    favDialog.addEventListener('close', function onClose() {
+        outputbox.value = favDialog.returnValue + " button clicked - " + (new Date());
+    });
+    
+
+    </script>
+</body>
+</html>
