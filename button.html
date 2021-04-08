@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        div {
+            border: 1px solid cornflowerblue;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        form {
+            background-color: cornflowerblue;
+        }
+
+        @media screen {
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button type="button">Normal Button</button>
+    
+        <button type="button" autofocus onclick="alert('autofocus: This Boolean attribute specifies that the button should have input focus when the page loads. Only one element in a document can have this attribute.')">Auto Focus Button</button>
+    
+        <button type="button" disabled onclick="alert('disabled: this boolean attribute prevents the user from interacting with the button: it cannot be pressed or focused')">Disabled Button</button>
+    </div>
+
+    <form id="form1" method="POST">
+        Name:<input type="text" id="username">
+    </form>
+    <form id="form2" method="POST">
+        E-mail:<input type="text">
+    </form>
+
+    <div class="button-form">
+        <button type="button" form="form1" value="Submit" onclick="saveUser()">Submit</button>
+    </div>
+
+    <script>
+        function saveUser() {
+            
+            username = document.getElementById("username");
+            localStorage.username=username.value;
+        
+        }
+    </script>
+</body>
+</html>

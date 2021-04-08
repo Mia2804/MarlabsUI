@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    margin: 0;
+}
+.container {
+    border: 6px solid black;
+    height: 400px; 
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+}
+.flex-item {
+    color:black;
+    font-size: 1rem;
+    padding: 1rem;
+    text-align: center; 
+
+    /* will grow all items to fill space  */
+    flex-grow: 1;
+    width: 15rem
+}
+.item-1 {
+    
+    height: 350px;
+}
+.item-2 {
+    
+    border-left: 1px solid black;
+    border-right: 1px solid black;;
+    
+    height: 350px;
+
+}
+.item-3 {
+    
+    height: 350px;
+    
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flex-item item-1">
+            Cyberpunk 2077 is an open world, narrative-driven role-playing game set in the universe of the classic pen & paper RPG system — Cyberpunk 2020.
+        </div>
+        <div class="flex-item item-2">
+            With dozens of hours of main story arc quests, and many more of additional activities, there’s always something to see and do in Night City. Players will experience all of it entirely through V’s eyes, with an interactive dialogue system that gives them greater narrative agency.
+        </div>
+        <div class="flex-item item-3">
+            Returning in Cyberpunk 2077 is CD PROJEKT RED’s hallmark of choices and consequences. As they make their way through the streets of Night City and its sky-scraping megabuildings, players will face difficult decisions that will ripple through the entire game.
+        </div>           
+    </div>
+</body>
+</html>
