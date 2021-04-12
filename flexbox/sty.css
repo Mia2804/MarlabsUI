@@ -1,0 +1,24 @@
+body{
+    display: flex;
+    justify-content: center;
+
+    /* why vertical centering did not work???? */
+    align-items: center;
+
+    /* solution:
+    1. height:100vh */
+}
+.container{
+    height: 400px;
+    width: 400px;
+    border: 5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    height: 80px;
+    width: 80px;
+    border: 3px solid orange;
+}

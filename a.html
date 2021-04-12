@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    a:active {
+         background-color: yellow;
+    }
+    a:hover{
+        cursor: pointer;
+    }
+    input:focus {
+        background-color: plum;
+    }
+    div p::after{
+        color: orangered;
+        content: " - After each";
+    }
+    div p::before{
+        color: lightsalmon;
+        content: "Before each - ";
+    }
+    div p::first-letter{
+        font-size: 200%;
+        color: royalblue;
+    }
+    div p:first-child{
+        color: pink;
+    }
+    div p::first-line{
+        background-color:lightslategray;
+    }
+    div p:nth-child(2) {
+        font-style:italic;
+        background-color: #fff;
+    }
+    div p:nth-last-child(1) {
+        font-size: 150%;
+    }
+    div p:nth-of-type(2) {
+        background-color: rosybrown;
+    }
+    input:required{
+        background-color: red;
+    }
+    body > p:nth-of-type(2n){
+        background-color: red;
+    }
+</style>
+<body>
+
+    <div>
+        <a href="https://google.com" target="_default" >Google</a>
+    </div>
+    <div>
+        <input type="text">
+    </div>
+    
+        
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, tenetur.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, tenetur.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, tenetur.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, tenetur.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, tenetur.</p>
+    
+<div>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <input required type="text">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, repudiandae laborum rem eaque velit odit error facilis, tenetur eligendi ipsum quo aliquam fugit ab eius at aperiam nisi eum ipsa molestiae accusantium, temporibus soluta nam doloribus vel! Laborum provident, sequi possimus in ipsum natus sapiente ratione esse nihil libero, reiciendis praesentium, tempora inventore. Quae sint vero aut optio eligendi impedit voluptatem deserunt ratione autem harum error fugiat consequuntur placeat temporibus ullam exercitationem sed maxime, nostrum magnam minus ut. Laborum aspernatur odio ipsa, dolorem officia hic, provident eius eveniet libero quidem neque animi ipsum iste? Vero corporis explicabo dolor repellendus quam.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, tenetur.</p>
+    <p>Lorem Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, consequatur eum? Id iste, soluta reprehenderit eligendi qui rem at cum aliquam sit magni recusandae quam, amet repellat nobis est vero minus officia omnis assumenda quidem tempore error in similique debitis. Repellat perferendis quae facere incidunt ad eius dolorem dolore eveniet.ipsum, dolor sit amet consectetur adipisicing elit. Nam, tenetur.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia minima vero perspiciatis, architecto, non distinctio, veniam quaerat placeat incidunt autem reprehenderit perferendis. Sequi eos dolore rem debitis iste rerum neque autem, aspernatur id, nisi repellendus ut laborum fugiat soluta repellat, eaque ipsam illum. Ipsam architecto, eum in quidem minima praesentium!Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quis consequatur voluptas facere nulla molestias consectetur eos minima debitis. Illo.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, tenetur.</p>
+</div>
+<div>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, repudiandae laborum rem eaque velit odit error facilis, tenetur eligendi ipsum quo aliquam fugit ab eius at aperiam nisi eum ipsa molestiae accusantium, temporibus soluta nam doloribus vel! Laborum provident, sequi possimus in ipsum natus sapiente ratione esse nihil libero, reiciendis praesentium, tempora inventore. Quae sint vero aut optio eligendi impedit voluptatem deserunt ratione autem harum error fugiat consequuntur placeat temporibus ullam exercitationem sed maxime, nostrum magnam minus ut. Laborum aspernatur odio ipsa, dolorem officia hic, provident eius eveniet libero quidem neque animi ipsum iste? Vero corporis explicabo dolor repellendus quam.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, tenetur.</p>
+    <p>Lorem Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, consequatur eum? Id iste, soluta reprehenderit eligendi qui rem at cum aliquam sit magni recusandae quam, amet repellat nobis est vero minus officia omnis assumenda quidem tempore error in similique debitis. Repellat perferendis quae facere incidunt ad eius dolorem dolore eveniet.ipsum, dolor sit amet consectetur adipisicing elit. Nam, tenetur.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia minima vero perspiciatis, architecto, non distinctio, veniam quaerat placeat incidunt autem reprehenderit perferendis. Sequi eos dolore rem debitis iste rerum neque autem, aspernatur id, nisi repellendus ut laborum fugiat soluta repellat, eaque ipsam illum. Ipsam architecto, eum in quidem minima praesentium!Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quis consequatur voluptas facere nulla molestias consectetur eos minima debitis. Illo.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, tenetur.</p>
+</div>
+</body>
+<script>
+    window.onbeforeunload = function(){
+    return "Are you sure you want to close the window?";
+}
+</script>
+</html>
