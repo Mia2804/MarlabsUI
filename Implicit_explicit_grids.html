@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            background-color: #eee;
+            width: 650px;
+            margin: 45px auto 0;
+
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(2,120px);
+            /* explicit  */
+            grid-gap: 15px;
+
+            /* implicit  */
+            grid-auto-columns: .5fr;
+            grid-auto-flow: column;
+            grid-auto-rows: 80px;
+        }
+        .items1{
+            background-color: lightcoral;
+        }
+        .items2{
+            background-color: orangered;
+            overflow-y: scroll;
+        }
+        .items3{
+            background-color: hotpink;
+        }
+        .items4{
+            background-color: chocolate;
+        }
+        .items5{
+            background-color: tomato;
+        }
+        .items6{
+            background-color: greenyellow;
+        }
+        .items7{
+            background-color: royalblue;
+        }
+        .items8{
+            background-color:violet;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items1">First</div>
+        <div class="items2">Second</div>
+        <div class="items3">Third</div>
+        <div class="items4">Fourth</div>
+        <div class="items5">Fifth</div>
+        <div class="items6">Sixth</div>
+        <div class="items7">Sixth</div>
+        <div class="items8">Sixth</div>
+    </div>
+</body>
+</html>
