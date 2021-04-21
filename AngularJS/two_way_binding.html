@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+    <script src="two_way_binding.js"></script>
+    <title>Document</title>
+</head>
+<body >
+    <div ng-controller="twoWayBinding">
+        <input type="text" ng-model="message" />
+        {{ message}}
+    </div>
+</body>
+</html>

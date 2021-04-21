@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        There are four methods to create an object:<br>
+        1. Object Literals:An object literal, also called an object initializer, is a comma-separated set of paired names and values.<br>
+        2. New operator or constructor: If you call a function using a new operator, the function acts as a constructor and returns an object.<br>
+        3. Object.create methos: You can also create new objects using the Object.create() method, which allows you to specify the prototype object and the properties.<br>
+        4. Class<hr>
+
+    </div>
+    <script>
+        // ---------method1 object literals
+        var car = {
+            model: 'Tesla',
+            series: 'Cybertrunck',
+            price: 60000
+        }
+        car.color = 'grey'
+
+        // --------method2 constructor o new operator
+        function popcorn(size, tasty) {
+            this.size = size;
+            this.tasty = tasty;
+        }
+        var popcorn1 = new popcorn('small', 'sweety');
+
+        // --------method3 object.create()
+        var idol = {
+            name: 'Billi Ellish',
+            style: "pop"
+        }
+        // use idol prototype to create another obj 
+        var myIdol = Object.create(idol)
+        console.log(myIdol.name)
+
+        // --------method 4 Class
+        class chips {
+            constructor(brand, price) {
+                this.brand = brand;
+                this.price = price;
+            }
+            getInfo() {
+                console.log(this.brand + " costs : " + this.price)
+            }
+        }
+        // use chips class to create obj
+        var chip1 = new chips("lay's", "3.99")
+        chips.getInfo();
+
+    </script>
+
+</body>
+</html>

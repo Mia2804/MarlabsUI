@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="txt" style="font-size: 30px; "></div>
+    <script>
+        
+        // function fn(){
+        //     a = setTimeout(()=>alert("Hellow"),2000
+        //     )}
+        // function fn1() {
+        //     clearTimeout(a)
+        //     }
+
+            function startTime(){
+                var today = new Date();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                var s = today.getSeconds();
+
+                h = checkTimeout(h)
+                m = checkTimeout(m)
+                s = checkTimeout(s)
+
+                document.getElementById("txt").innerHTML = h+":" + m + ":" + s;
+
+                t = setTimeout(
+                    ()=>startTime(),1000
+                )
+                function checkTimeout(i) {
+                    if(i<10){
+                        i = "0"+i
+                    }
+                    return i;
+                }
+                
+                    
+                
+            }
+            function fn1() {
+                    clearTimeout(t)
+                }
+    </script>
+    <!-- <button onclick="fn()">CLICK</button> -->
+    <!-- <button onclick="fn1()">CLEAR</button> -->
+    <button onclick="startTime()">Start</button>
+    <button onclick="fn1()">CLEAR</button>
+</body>
+</html>

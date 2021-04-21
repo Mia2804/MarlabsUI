@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+    <script src="watcher.js"></script>
+    <title>Document</title>
+</head>
+<body ng-app="app">
+    <div ng-controller="emp">
+        <!-- a=<input ng-model="a" ng-change="updateC()"> -->
+        <!-- <div>
+            a={{a}}
+        </div> -->
+        <!-- a=<input ng-model="o.a">
+        b=<input ng-model="o.b">
+        <div>
+            c={{o.c}}
+        </div> -->
+
+        <div ng-repeat = "o in emps">
+            <div>{{o.empno}} - {{o.ename}}</div>
+        </div>
+        <button ng-click='addEmp()'>add</button>
+        <button ng-click='modify3rdEmp()'>modify3rdEmployee</button>
+
+    </div>
+    
+</body>
+</html>
