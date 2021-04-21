@@ -13,26 +13,29 @@ var createNewTask = function(taskString){
     checkBox.type = "checkbox"
     listItem.appendChild(checkBox)
     listItem.appendChild(label)
-    return listItem
+    console.log(listItem)
+    if(taskString) return listItem
 }
 
 var addItem = function(){{
     var listItem = createNewTask(taskInput.value);
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskCompleted);
-    // taskInput.value = '';
+    taskInput.value = '';
     
 }}
 
 // mark completed task
 var taskCompleted = function(){
-    var listItem = createNewTask(taskInput.value);
+    // var listItem = createNewTask(taskInput.value);
+    var listItem=this.parentNode;
     completeTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete)
 }
 
 var taskIncomplete = function() {
-    var listItem = createNewTask(taskInput.value);
+    // var listItem = createNewTask(taskInput.value);
+    var listItem=this.parentNode;
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskCompleted)
 }
